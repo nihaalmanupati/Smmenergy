@@ -64,12 +64,11 @@ hr.star-primary:after {
   background-color: white;
   color: #2C3E50;
 }
-.img-centered {
+/*.img-centered {
   margin: 0 auto;
-}
+}*/
 header {
   text-align: center;
-  background: #18BC9C;
   color: white;
 }
 header .container {
@@ -503,3 +502,15 @@ fieldset[disabled] .btn-success.active {
   opacity: 0;
   display: none;
 }
+
+
+/*custom*/
+.video{
+  /*position: fixed;*/
+    width: 100%;
+    min-height:100%;
+}
+
+/*header{
+  height:100vh;
+}*/
