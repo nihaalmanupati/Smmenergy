@@ -9,7 +9,7 @@ $(function() {
             // Prevent spam click and default submit behaviour
             $("#btnSubmit").attr("disabled", true);
             event.preventDefault();
-            
+
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
@@ -21,16 +21,25 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "https://api.postmarkapp.com/email",
                 type: "POST",
-                data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
+                crossDomain: true,
+                headers: {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "X-Postmark-Server-Token": "9b62ab55-8870-4e35-b468-0bec0cb0b749",
+                  "Access-Control-Request-Headers": "x-requested-with"
                 },
-                cache: false,
-                success: function() {
+                data: {
+                    From: email,
+                    To: 'smmenergy9@gmail.com',
+                    Subject: 'New Enquiry from ' + email,
+                    TextBody: message,
+                    HtmlBody: "<p>" + message + "</p>"
+                },
+                // cache: false,
+                success: function(err) {
+                  debugger;
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
                     $('#success').html("<div class='alert alert-success'>");
@@ -46,6 +55,7 @@ $(function() {
                 },
                 error: function() {
                     // Fail message
+                    debugger;
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
