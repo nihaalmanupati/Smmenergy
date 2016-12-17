@@ -20,9 +20,11 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
-            $.ajax({
+            console.log("ajax")
+
+            $.post({
                 url: "https://api.postmarkapp.com/email",
-                type: "POST",
+                dataType:'json',
                 crossDomain: true,
                 headers: {
                   "Accept": "application/json",
@@ -32,13 +34,15 @@ $(function() {
                 },
                 data: {
                     From: email,
-                    To: 'smmenergy9@gmail.com',
+                    To: 'vikky.nihaal@gmail.com',
                     Subject: 'New Enquiry from ' + email,
                     TextBody: message,
                     HtmlBody: "<p>" + message + "</p>"
                 },
                 // cache: false,
                 success: function(err) {
+                  console.log("success")
+                  console.log(err)
                   debugger;
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
@@ -54,6 +58,9 @@ $(function() {
                     $('#contactForm').trigger("reset");
                 },
                 error: function() {
+                  console.log("fail")
+
+                  console.log(err)
                     // Fail message
                     debugger;
                     $('#success').html("<div class='alert alert-danger'>");

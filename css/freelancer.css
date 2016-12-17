@@ -103,7 +103,7 @@ header .intro-text .skills {
   }
 }
 .navbar-custom {
-  background: transparent;
+  background: #2C3E50;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -199,6 +199,10 @@ section.success {
 #portfolio .portfolio-item {
   margin: 0 0 15px;
   right: 0;
+}
+.portfolio-item img {
+    height: 300px;
+    width: 100%;
 }
 #portfolio .portfolio-item .portfolio-link {
   display: block;
@@ -509,11 +513,6 @@ fieldset[disabled] .btn-success.active {
   /*position: fixed;*/
     width: 100%;
     min-height:100%;
-}
-
-.portfolio-item img{
-  height: 300px;
-  width: 100%
 }
 
 /*header{
