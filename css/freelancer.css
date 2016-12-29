@@ -520,6 +520,27 @@ fieldset[disabled] .btn-success.active {
 }*/
 
 
+/*portfolio css*/
+
+#portfolio {
+  padding: 0;
+  padding-top:20px;
+}
+#portfolio h4{
+  text-align: center;
+}
+
+/*about css*/
+
+#about{
+  height:100vh;
+}
+
+#about .about-content{
+  margin-top: 55px;
+}
+
+
 /*contact css*/
 
 #contact {
