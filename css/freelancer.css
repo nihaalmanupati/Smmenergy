@@ -518,3 +518,21 @@ fieldset[disabled] .btn-success.active {
 /*header{
   height:100vh;
 }*/
+
+
+/*contact css*/
+
+#contact {
+ padding: 0;
+ padding-top: 20px;
+ padding-bottom: 10px;
+}
+
+#contact .floating-label-form-group:not(:first-child) {
+    padding-left: 0;
+    border-left: 0;
+}
+
+#contact .send{
+  margin-top: 10px;
+}
